@@ -5,3 +5,9 @@ export async function getPets() {
 
   return resp.data;
 }
+
+export async function getSongs() {
+  const resp = await client.from('songs').select('*');
+
+  return resp.data;
+}

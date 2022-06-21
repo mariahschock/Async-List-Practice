@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import PetList from './PetList';
-import { getPets } from './services/fetch-utils';
+import SongList from './SongList';
+import { getPets, getSongs } from './services/fetch-utils';
 
 import './App.css';
 // import your arrays here
 
 function App() {
   const [pets, setPets] = useState([]);
+  const [songs, setSongs] = useState([]);
 
   async function fetchPetsData() {
     const data = await getPets();
@@ -17,11 +19,21 @@ function App() {
     fetchPetsData(); 
   }, []);
 
+  async function fetchSongData() {
+    const data = await getSongs();
+    setSongs(data);
+  }
+
+  useEffect(() => {
+    fetchSongData();
+  }, []);
+
   return (
     <div className="App">
-        Render all your lists here. Pass the arrays as props.
       <header>
         <PetList pets={pets}/>
+        <hr />
+        <SongList songs={songs}/>
       </header>
     </div>
   );
