@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  align-items: center;;
 }
 
 .App-logo {
@@ -59,6 +60,15 @@
   flex-wrap: wrap;
 }
 .movies {
+  margin: 10px;
+  padding: 20px;
+}
+.animal-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.animals {
+  background-color: black;
   margin: 10px;
   padding: 20px;
 }

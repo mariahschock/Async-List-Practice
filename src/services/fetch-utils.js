@@ -17,3 +17,9 @@ export async function getMovies() {
 
   return resp.data;
 }
+
+export async function getAnimals() {
+  const resp = await client.from('animals').select('*');
+
+  return resp.data;
+}

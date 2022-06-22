@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import PetList from './PetList';
 import SongList from './SongList';
 import MovieList from './MovieList';
-import { getMovies, getPets, getSongs } from './services/fetch-utils';
+import AnimalList from './AnimalList';
+import { getMovies, getPets, getSongs, getAnimals } from './services/fetch-utils';
 
 import './App.css';
 // import your arrays here
@@ -11,6 +12,7 @@ function App() {
   const [pets, setPets] = useState([]);
   const [songs, setSongs] = useState([]);
   const [movies, setMovies] = useState([]);
+  const [animals, setAnimals] = useState([]);
 
   async function fetchPetsData() {
     const data = await getPets();
@@ -39,6 +41,15 @@ function App() {
     fetchMovieData();
   }, []);
 
+  async function fetchAnimalData() {
+    const data = await getAnimals();
+    setAnimals(data);
+  }
+
+  useEffect(() => {
+    fetchAnimalData();
+  }, []);
+
   return (
     <div className="App">
       <header>
@@ -47,6 +58,8 @@ function App() {
         <SongList songs={songs}/>
         <hr />
         <MovieList movies={movies}/>
+        <hr />
+        <AnimalList animals={animals}/>
       </header>
     </div>
   );
