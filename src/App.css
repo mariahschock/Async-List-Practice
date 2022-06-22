@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  align-items: center;;
 }
 
 .App-logo {
@@ -35,4 +36,39 @@
   to {
     transform: rotate(360deg);
   }
+}
+.pet-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pets {
+  color: black;
+  margin: 10px;
+  padding: 20px;
+}
+.song-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.songs {
+  background-color: rgba(112, 128, 144, 0.613);
+  margin: 10px;
+  padding: 20px;
+}
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.movies {
+  margin: 10px;
+  padding: 20px;
+}
+.animal-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.animals {
+  background-color: black;
+  margin: 10px;
+  padding: 20px;
 }
