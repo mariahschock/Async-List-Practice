@@ -54,3 +54,11 @@
   margin: 10px;
   padding: 20px;
 }
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.movies {
+  margin: 10px;
+  padding: 20px;
+}
